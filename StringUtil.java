@@ -11,12 +11,11 @@ public class StringUtil {
         }
         int total = strArr.length;
         int startLength = 0;
-        int i = 0;
-        while (i < total) {
+        while (1 < total) {
 
             // 使用这个str 冒泡排序，与后面的所有字符串比较，如果比后面的大，那就向后移动，
             // 执行第一遍的结果是，全部最大的一个，放到了最后，此时总长度减一，再从第一个开始，重复上述步骤
-            for (int idx = i; idx < total; idx++) {
+            for (int idx = 0; idx < total; idx++) {
                 // 空行 #号开头 与后续第一个有效的Key值一起排序
                 if (strArr[idx] == null || strArr[idx].trim().isEmpty() || strArr[idx].trim().startsWith("#")) {
                     startLength++;
@@ -37,7 +36,6 @@ public class StringUtil {
                 startLength = 0;
             }
             total--;
-            i = 0;
         }
         StringBuilder sb = new StringBuilder();
         for (int idx = 0; idx < strArr.length; idx++) {
